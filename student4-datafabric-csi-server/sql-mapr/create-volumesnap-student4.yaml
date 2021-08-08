@@ -1,0 +1,9 @@
+apiVersion: snapshot.storage.k8s.io/v1beta1
+kind: VolumeSnapshot
+metadata:
+  name: mapr-sqlserver-snap01-student4
+  namespace: mapr-student4
+spec:
+  volumeSnapshotClassName: mapr-student4-sc-snap
+  source:
+    persistentVolumeClaimName: mapr-sqlserver-data01-student4

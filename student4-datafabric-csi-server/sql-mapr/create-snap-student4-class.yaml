@@ -1,0 +1,12 @@
+apiVersion: snapshot.storage.k8s.io/v1beta1
+kind: VolumeSnapshotClass
+metadata:
+  name: mapr-student4-sc-snap
+driver: com.mapr.csi-kdf 
+deletionPolicy: Delete
+parameters:
+  restServers: "10.6.29.250:8443"
+  cluster: "mapr-epc"  
+  description: "Snapshot create by the HPE MAPR CSI Driver - Kubernetes-CIC"
+  csi.storage.k8s.io/snapshotter-secret-name: mapr-provisioner-secrets 
+  csi.storage.k8s.io/snapshotter-secret-namespace: mapr-student4 

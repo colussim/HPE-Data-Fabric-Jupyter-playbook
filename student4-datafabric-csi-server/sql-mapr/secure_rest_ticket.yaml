@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mapr-provisioner-secrets
+  namespace: mapr-student4
+type: Opaque
+data:
+  MAPR_CLUSTER_USER: bWFwcg== 
+  MAPR_CLUSTER_PASSWORD: QmVuY2gxMjM= 

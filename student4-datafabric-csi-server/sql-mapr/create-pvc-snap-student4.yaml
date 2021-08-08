@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mapr-sqlserver-data02-student4
+spec:
+  storageClassName: mapr-student4-sc
+  dataSource:
+    name: mapr-sqlserver-snap01-student4
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi

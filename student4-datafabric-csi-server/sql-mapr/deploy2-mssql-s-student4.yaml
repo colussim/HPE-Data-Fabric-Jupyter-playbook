@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mssql-deployment-student4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     app: mssql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      terminationGracePeriodSeconds: 10
+      securityContext:
+          runAsUser: 1005  
+          fsGroup: 1005 
+      containers:
+      - name: mssql
+        image: mcr.microsoft.com/mssql/rhel/server:2019-CU3-rhel-7.6 
+        ports:
+        - containerPort: 1433
+        env:
+        - name: MAPR_CLUSTER
+          value: mapr-epc 
+        - name:  MAPR_CLDB_HOSTS
+          value: 10.6.29.250:7222,10.6.29.251:7222,10.6.29.252:7222
+        - name:  MAPR_MOUNT_PATH
+          value:  /  
+        - name: MSSQL_PID
+          value: "Developer"
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sqlsecret-student4
+              key: sapassword
+        volumeMounts:
+        - name: mssqldb
+          mountPath: /var/opt/mssql
+      volumes:
+      - name: mssqldb
+        persistentVolumeClaim:
+          claimName: mapr-sqlserver-data01-student4
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-service-student4
+spec:
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433
+  type: NodePort

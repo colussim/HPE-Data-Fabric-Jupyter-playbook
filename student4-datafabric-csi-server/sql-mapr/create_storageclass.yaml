@@ -1,0 +1,27 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mapr-student4-sc
+  namespace: mapr-stundent4
+provisioner: com.mapr.csi-kdf
+allowVolumeExpansion: true
+parameters:
+    csi.storage.k8s.io/provisioner-secret-name : mapr-provisioner-secrets
+    csi.storage.k8s.io/provisioner-secret-namespace : mapr-student4
+    csi.storage.k8s.io/controller-expand-secret-name: mapr-provisioner-secrets 
+    csi.storage.k8s.io/controller-expand-secret-namespace: mapr-student4 
+    csiNodePublishSecretName: "mapr-ticket-secret"
+    csiNodePublishSecretNamespace: "mapr-student4"
+    restServers: "10.6.29.251:8443" 
+    cldbHosts: "10.6.29.250:7222 10.6.29.251:7222 10.6.29.252:7222"
+    cluster: mapr-epc.hpemscc.hpecic.net 
+    securityType: secure # Default: unsecure
+    namePrefix: PVC-mssql
+    mountPrefix: /mssql
+    replication: "3"
+    minreplication: "2"
+    nsreplication: "3"
+    nsminreplication: "2"
+    type: "rw"
+    mount: "1"
+

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mapr-sqlserver-clone01-student4
+  namespace: mapr-student4
+spec:
+  dataSource:     
+     name: mapr-sqlserver-data01-student4
+     kind: PersistentVolumeClaim
+  storageClassName: mapr-student4-sc
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50G

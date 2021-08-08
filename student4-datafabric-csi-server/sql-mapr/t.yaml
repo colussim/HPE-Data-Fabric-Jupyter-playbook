@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mssql-deployment-snap-student4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     app: mssql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      terminationGracePeriodSeconds: 10
+      securityContext:
+          runAsUser: 10001
+          fsGroup: 0
+      containers:
+      - name: mssql
+        image: mcr.microsoft.com/mssql/rhel/server:2019-latest
+        ports:
+        - containerPort: 1433
+        env:
+        - name: MSSQL_PID
+          value: "Developer"
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sqlsecret-student4
+              key: sapassword
+        volumeMounts:
+        - name: mssqldb
+          mountPath: /var/opt/mssql/data
+      restartPolicy: Always
+      volumes:
+      - name: mssqldb
+        persistentVolumeClaim:
+          claimName: mapr-sqlserver-data02-student4
