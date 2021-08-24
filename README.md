@@ -121,3 +121,63 @@ You'll need a local systems or Virtual Machines that you are able to install sof
 
  </tbody>
 </table>   
+<h3><img src="/graphics/point1.png?raw=true" style="max-width:100%;"> Terminology</h3>
+
+Throughout this demonstration we take for example the connection with the user stundent4 but all the configurations apply to any user.
+
+<h3><img src="/graphics/listcheck.png?raw=true" style="max-width:100%;"> Setup</h3>
+
+Clone the repository :
+
+```
+
+$ git clone https://github.com/colussim/HPE-Data-Fabric-Jupyter-playbook.git
+$ cd HPE-Data-Fabric-Jupyter-playbook
+$
+
+```
+
+<ul>
+<li>Copy the <b><i>student4-datafabric-csi-jupyter</i></b> directory into your JuperterLab environment or into the directory of your JuperterHub user.</li>
+<li>Create the same user used in your JupyterLab-JupyterHub environment on your master node of your kubernetes cluster.</li>
+<li>Generate a ras ssh key for this user.</li>
+<li>Update the authorized_keys file with the public keys (in master node)</li>
+<li>To make kubectl work for your non-root user, run these commands, which are also part of the result of the kubeadm init command:
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+</li>
+<li>Copy the <b><i>sql-mapr</i></b> directory contained in the <b><i>tudent4-datafabric-csi-server</i></b> directory of the repository into the home directory of your create user on your master node</li>
+</ul>
+
+<h3><img src="/graphics/pencil2.png?raw=true" style="max-width:100%;"> Usage</h3>
+
+Load the Notebook  : ***HPEMAPR-SQL-Intro.ipynb***
+
+<img src="/graphics/notebook.png?raw=true" style="max-width:100%;">
+
+
+<h3><img src="/graphics/bookpencil.png?raw=true" style="max-width:100%;"> Conclusion</h3>
+
+<p>As you can see, it is quite easy to set up and use HPE MapR CSI Driver .</p>
+<p>This version include all the latest capabilities in the CSI specification :</p>
+<ul>
+    <li>Dynamic Provisionning : Parameter Overloading</li>
+    <li>Volume Snapshots</li>
+    <li>Data Sources :
+   Cloning - Volume Snapshot and Restore
+    </li>
+    <li>Volume Expansion</li>
+</ul>
+<p>Do not hesitate to contact me for more information</p>
+
+<h3><img src="/graphics/bookpencil.png?raw=true" style="max-width:100%;"> Resources</h3>
+
+[HPE MapR CSI Driver for Kubernetes on GitHub](https://github.com/mapr/mapr-csi){:target="_blank" }
+
+[HPE MapR CSI documentation](https://docs.datafabric.hpe.com/62/CSIdriver/csi_using_and_troubleshooting.html){:target="_blank" }
+
+# Thank You ![grommet, grommet](/graphics/grommet.png){:width="50%"}{: style="float:right"}
+
