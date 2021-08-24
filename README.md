@@ -173,11 +173,12 @@ Load the Notebook  : ***HPEMAPR-SQL-Intro.ipynb***
 </ul>
 <p>Do not hesitate to contact me for more information</p>
 
-<h3><img src="/graphics/bookpencil.png?raw=true" style="max-width:100%;"> Resources</h3>
+<h3><img src="/graphics/owl.png?raw=true" style="max-width:100%;"> Resources</h3>
 
 [HPE MapR CSI Driver for Kubernetes on GitHub](https://github.com/mapr/mapr-csi){:target="_blank" }
 
 [HPE MapR CSI documentation](https://docs.datafabric.hpe.com/62/CSIdriver/csi_using_and_troubleshooting.html){:target="_blank" }
 
-# Thank You ![grommet, grommet](/graphics/grommet.png){:width="50%"}{: style="float:right"}
+# Thank You !<img src="/graphics/bookpencil.png?raw=true" style="max-width:50%;float:right"}>
+
 
