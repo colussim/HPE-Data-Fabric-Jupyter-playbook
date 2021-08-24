@@ -143,11 +143,15 @@ $
 <li>Generate a ras ssh key for this user.</li>
 <li>Update the authorized_keys file with the public keys (in master node)</li>
 <li>To make kubectl work for your non-root user, run these commands, which are also part of the result of the kubeadm init command:
+    
 ```
+    
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    
 ```
+
 </li>
 <li>Copy the <b><i>sql-mapr</i></b> directory contained in the <b><i>tudent4-datafabric-csi-server</i></b> directory of the repository into the home directory of your create user on your master node</li>
 </ul>
