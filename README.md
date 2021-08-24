@@ -63,7 +63,7 @@ You'll need a local systems or Virtual Machines that you are able to install sof
 </ul>
 <img src="/graphics/infra1.png?raw=true" style="max-width:100%;">
 
-<img src="/graphics/infra2.png?raw=true" style="max-width:100%;">
+<img src="/graphics/infra3.png?raw=true" style="max-width:100%;">
 
 <h3><img src="/graphics/education1.png?raw=true" style="max-width:100%;"> Lab Details</h3>
 
