@@ -179,6 +179,6 @@ Load the Notebook  : ***HPEMAPR-SQL-Intro.ipynb***
 
 [HPE MapR CSI documentation](https://docs.datafabric.hpe.com/62/CSIdriver/csi_using_and_troubleshooting.html){:target="_blank" }
 
-# Thank You !<img src="/graphics/grommet.png?raw=true" style="max-width:50%;float:right;"}>
+# Thank You !<img src="/graphics/grommet.png?raw=true" style="max-width:50%;float:right;">
 
 
