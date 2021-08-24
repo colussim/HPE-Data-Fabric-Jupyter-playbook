@@ -22,5 +22,4 @@
 
 <p>The purpose of this demo is to show you how to use the MapR storage function for SQL Server in a kubernet environment.</p>
 
-<img src="/graphics/info.png?raw=true" style="max-width:100%;">
-<b>Note:</b> The Kubernete cluster and MapR Data Fabric cluster and CSI driver are already deployed<br>
+<img src="/graphics/info.png?raw=true" style="max-width:100%;"><b>Note:</b> The Kubernete cluster and MapR Data Fabric cluster and CSI driver are already deployed<br>
